@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .button-container {
+            margin: 20px;
+        }
+        .button-container input {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button-container input:hover {
+            background-color: #ddd;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .images img {
+            width: 100px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors Game</h1>
+    <div class="button-container"></div>
+        <input type="button" value="Rock" onclick="getValue(0);"/>
+        <input type="button" value="Paper" onclick="getValue(1);"/>
+        <input type="button" value="Scissors" onclick="getValue(2);"/>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="images">
+        <img src="bua.png" alt="Rock" onclick="getValue(0);">
+        <img src="giay.png" alt="Paper" onclick="getValue(1);">
+        <img src="keo.png" alt="Scissors" onclick="getValue(2);">
+    </div>
+    <script>
+        var arr = ['Rock', 'Paper', 'Scissors'];
+
+        function getValue(c) {
+            var s = Math.floor(Math.random() * 3);
+            var result = '';
+
+            if (c === s) {
+                result = 'Hòa';
+            } else if ((c === 0 && s === 2) || (c === 1 && s === 0) || (c === 2 && s === 1)) {
+                result = 'Bạn Thắng!';
+            } else {
+                result = 'Bạn Thua!';
+            }
+
+            document.getElementById('result').innerText = 'Máy tính chọn ' + arr[s] + '. ' + result;
+        }
+    </script>
+    <h1>Create From: Nguyen The Huy</h1>
+</body>
+</html>

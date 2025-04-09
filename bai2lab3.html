@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bảng Cửu Chương</h1>
+    <table id="multiplicationTable"></table>
+
+    <script>
+        function generateMultiplicationTable() {
+            var table = document.getElementById("multiplicationTable");
+            for (var i = 1; i <= 10; i++) {
+                var row = table.insertRow();
+                for (var j = 1; j <= 10; j++) {
+                    var cell = row.insertCell();
+                    cell.innerHTML = i * j;
+                }
+            }
+        }
+
+        generateMultiplicationTable();
+    </script>
+</body>
+</html>

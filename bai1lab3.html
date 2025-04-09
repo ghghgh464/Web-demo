@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseFloat(prompt("Nhập số a:"));
+        var b = parseFloat(prompt("Nhập số b:"));
+        var o = prompt("Toán tử:");
+
+        switch(o){
+            case '+':
+                alert("Tổng: " + (a + b));
+                break;
+            case '-':
+                alert("Hiệu: " + (a - b));
+                break;
+            case '*':
+                alert("Tích: " + (a * b));
+                break;
+            case '/':
+                if (b !== 0) {
+                    alert("Thương: " + (a / b));
+                } else {
+                    alert("Nót ơ năm bờ");
+                }
+                break;
+            default:
+                alert(o + " không phải là toán tử hợp lệ");
+                break;
+        }
+    </script>
+</body>
+</html>
